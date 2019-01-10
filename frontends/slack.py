@@ -37,5 +37,8 @@ def slack_bot():
 	# Parse, figure out the next state and move on.
 	state = STATES[state].on_input(data, context, output=output)
 
-	# Just combine them all.
-	return str.join("\n", outputs)
+	# Just combine them all, and post them in-channel.
+	return flask.jsonify({
+		"response_type": "in_channel",
+		"text": str.join("\n", outputs),
+	})
