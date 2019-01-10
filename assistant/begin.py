@@ -11,7 +11,7 @@ def on_enter_state(contxt, output=print):
 
 def on_input(data, context, output=print):
 	# Are we in a _positive_ state?
-	m = re.match(r"^I (?P<mood>(really )?(loved|liked)) (?P<place1>.*)( and (?P<place2>.*))?$", data, re.IGNORECASE)
+	m = re.match(r"^I (?P<mood>(really )?(loved|liked)) (?P<place1>\w+)( and (?P<place2>\w+))?$", data, re.IGNORECASE)
 	if m:
 		context["mood"] = m.group("mood")
 		context["place1"] = m.group("place1")
@@ -25,7 +25,7 @@ def on_input(data, context, output=print):
 			return "ONE REAL PLACE"
 
 	# Are we in a negative state?
-	m = re.match(r"^I (?P<mood>(really )?(hated|disliked)) (?P<place1>.*)-(?P<place2>.*)$", data, re.IGNORECASE)
+	m = re.match(r"^I (?P<mood>(really )?(hated|disliked)) (?P<place1>\w+)-(?P<place2>\w+)$", data, re.IGNORECASE)
 	if m:
 		context["mood"] = m.group("mood")
 		context["place1"] = m.group("place1")

@@ -4,7 +4,7 @@
 # Rights waived via CC0 <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 def on_enter_state(context, output=print):
-	output(f"Oh boy, if you {context['mood']} that, then definitely don't think of going to {context['place1']} or {context['place2']}!")
+	output(f"If you {context['mood']} that, then definitely don't think of going to {context['place1'].title()} or {context['place2'].title()}!")
 	output("You promise?")
 
 def on_input(data, context, output=print):

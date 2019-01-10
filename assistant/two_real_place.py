@@ -4,7 +4,7 @@
 # Rights waived via CC0 <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 def on_enter_state(context, output=print):
-	new_place = f"{context['place1']}-{context['place2']}?"
+	new_place = f"{context['place1'].title()}-{context['place2'].title()}"
 
 	output(f"Wow! Have you checked out {new_place} yet?")
 	output(f"If you {context['mood']} the last place, this'd be even greater!")
