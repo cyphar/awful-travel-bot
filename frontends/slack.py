@@ -17,8 +17,9 @@ def slack_bot():
 	# and there is a persistence talk to help remove this need.
 	global state, context
 
-	# Just exit.
+	# Just exit, but reset the state.
 	if state == "END":
+		state, context = "BEGIN", {}
 		return "That's all folks!"
 
 	# For collecting output for returning.
