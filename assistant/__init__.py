@@ -34,4 +34,3 @@ STATES = {
 	"ONE REAL PLACE": one_real_place,
 	"TWO REAL PLACE": two_real_place,
 }
-__all__ = ["STATES"]
